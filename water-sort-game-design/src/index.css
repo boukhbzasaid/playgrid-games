@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: "Baloo 2", "Nunito", ui-rounded, "Segoe UI Rounded", system-ui, -apple-system,
+      "Trebuchet MS", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+    background: #251049;
+    color: #fff;
+  }
+  button {
+    font-family: inherit;
+  }
+}
+
+@font-face {
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/baloo2/v21/wXK0E3kTposypRydzVT08TS3JnAmtdgozapv9Fat7WcN.woff2)
+    format("woff2");
+}
+
+/* ---------------- animations ---------------- */
+
+@keyframes float-blob {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -28px, 0) scale(1.08); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 0.9; transform: scale(1.15); }
+}
+
+@keyframes pour-in {
+  0% { transform: scaleY(0.05); opacity: 0.55; }
+  60% { transform: scaleY(1.12); }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes stream-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-1.5deg); }
+  75% { transform: translateY(-3px) rotate(1.5deg); }
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-20vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(105vh) rotate(720deg); opacity: 0.9; }
+}
+
+@keyframes bubble-rise {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  20% { opacity: 0.85; }
+  100% { transform: translateY(-26px) scale(1); opacity: 0; }
+}
+
+@keyframes shine-sweep {
+  0% { transform: translateX(-120%) skewX(-18deg); }
+  100% { transform: translateX(320%) skewX(-18deg); }
+}
+
+@keyframes shake-x {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+@keyframes ring-pulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.anim-pour-in { animation: pour-in 300ms cubic-bezier(.22,1.2,.36,1) both; transform-origin: bottom; }
+.anim-pop { animation: pop-in 320ms cubic-bezier(.2,1.3,.4,1) both; }
+.anim-wobble { animation: wobble 1.6s ease-in-out infinite; }
+.anim-shake { animation: shake-x 340ms ease-in-out; }
+
+.text-shadow-game {
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.28), 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
