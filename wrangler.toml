@@ -2,4 +2,4 @@ name = "playgrid-games"
 compatibility_date = "2026-10-02"
 
 [assets]
-directory = "."
+directory = "./water-sort-game-design"
